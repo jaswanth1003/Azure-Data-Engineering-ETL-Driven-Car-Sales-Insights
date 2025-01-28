@@ -8,11 +8,11 @@ This project showcases a comprehensive data engineering workflow built on the Me
 
 ![image](https://github.com/user-attachments/assets/a40bc94f-791d-4548-ae2f-fa39f6b95028)
 
-Bronze Layer: Raw data is imported into the Azure Data Lake via pipelines created using Azure Data Factory (ADF). A Linked Service is configured for both GitHub (using an HTTP Linked Service) and the Azure Data Lake to access the dataset. Dynamic pipelines leverage LookUp and ForEach activities to ingest multiple CSV files (10 files in total for this project).
+**Bronze Layer**: Raw data is imported into the Azure Data Lake via pipelines created using Azure Data Factory (ADF). A Linked Service is configured for both GitHub (using an HTTP Linked Service) and the Azure Data Lake to access the dataset. Dynamic pipelines leverage LookUp and ForEach activities to ingest multiple CSV files (10 files in total for this project).
 
-Silver Layer: Data transformation is carried out in Azure Databricks, where processes such as data cleansing, validation, and enrichment are performed. The refined data is then stored in a dedicated Silver container for further processing.
+**Silver Layer**: Data transformation is carried out in Azure Databricks, where processes such as data cleansing, validation, and enrichment are performed. The refined data is then stored in a dedicated Silver container for further processing.
 
-Gold Layer: Azure Synapse Analytics is utilized to define an external table schema within a Gold layer. Data stored in the Silver container is made queryable as traditional tables using the OPENROWSET() function. This stage stores aggregated, analytics-ready data in the Gold container for advanced analysis.
+**Gold Layer**: Azure Synapse Analytics is utilized to define an external table schema within a Gold layer. Data stored in the Silver container is made queryable as traditional tables using the OPENROWSET() function. This stage stores aggregated, analytics-ready data in the Gold container for advanced analysis.
 
 Visualization: Power BI is integrated with Azure Synapse Analytics to enable visualization of the analytics-ready data. Interactive dashboards provide key insights, such as sales trends and performance, based on the AdventureWorks dataset.
 
